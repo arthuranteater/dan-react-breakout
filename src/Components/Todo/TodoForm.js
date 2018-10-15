@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from "react-redux"
+import { addItem } from "./actions"
 
 export default class TodoForm extends React.Component {
     state = {
@@ -26,4 +28,11 @@ export default class TodoForm extends React.Component {
             </div>
         )
     }
+
+
 }
+const mapDispatchToProps = {
+    addItem
+}
+
+export default connect(null, mapDispatchToProps)(TodoForm)
